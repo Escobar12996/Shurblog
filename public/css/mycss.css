@@ -1,0 +1,46 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.topfix{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.textopost, img{
+    max-width: 800px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .textopost, img{
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px)  {
+    .textopost, img{
+        max-width: 600px;
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px)  {
+    .textopost, img{
+        max-width: 830px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1200px)  {
+    .textopost, img{
+        max-width: 1000px;
+        height: auto;
+    }
+}
