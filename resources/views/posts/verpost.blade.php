@@ -25,7 +25,7 @@
                                         <img class="card-img-top w-100" alt="{{ $message->user->name }}" src="{{ url('../'.Storage::url("app/imagenesUsuario/usuario.png")) }}">
                                     @endif
                                         <div class="card-body">
-                                        <p class="card-text">{{$message->user->name}}</p>
+                                        <p class="card-text textome">{{$message->user->name}}</p>
                                     </div>
                                 </div>
                             </div>

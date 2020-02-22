@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Request\ValidatePost;
 use App\Request\ValidationFormUserImage;
 use App\Message;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class PostController extends Controller
 
     }
 
-    public function crearpost(Request $request){
+    public function crearpost(){
         return view('posts.crearpost');
     }
 
@@ -43,7 +44,7 @@ class PostController extends Controller
         return view('posts.editarpost')->with('post', $post);
     }
 
-    public function createPost(Request $request){
+    public function createPost(ValidatePost $request){
 
         $post = new Post();
         $post->tittle=$request->tittle;
