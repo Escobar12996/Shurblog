@@ -17,5 +17,11 @@ class ComentariosController extends Controller {
         return redirect()->back();
     }
 
+    public function deleteComentario( Request $request, $id){
+        $comentario = Message::find($id);
+        $comentario->delete();
+        return redirect()->back();
+
+    }
 
 }

@@ -29,8 +29,8 @@ class ValidationFormUserPass extends FormRequest
 
         return [
             'passwordv' => ['required', 'string'],
-            'passwordn' => ['required', 'string', 'min:8'],
-            'passwordnn' => ['required', 'string']
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'same:password_confirmation'],
+            'password_confirmation' => ['required', 'string', 'min:8', 'same:password'],
         ];
     }
 
@@ -41,9 +41,9 @@ class ValidationFormUserPass extends FormRequest
     {
         return [
             'passwordv.required' => 'Debes introducir la contraseña antigua',
-            'passwordn.required' => 'Debes introducir una contraseña',
-            'passwordn.min' => 'Debe de tener mas de 8 letras',
-            'passwordnn.required' => 'Debes de volver a introducir la contraseña'
+            'password.required' => 'Debes introducir una contraseña',
+            'password.min' => 'Debe de tener mas de 8 letras',
+            'password.confirmed' => 'Debes de volver a introducir la contraseña',
         ];
     }
 }

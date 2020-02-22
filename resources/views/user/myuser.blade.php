@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header  text-center bg-dark text-white">Editar Usuario</div>
                         <div class="card-body">
-                            <form method="post" action="{{ url('myuser', ['id' => $usuario->id]) }}">
+                            <form method="post" action="{{ url('myuser') }}">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="user" class="col-md-4 col-form-label text-md-right">Usuario</label>
@@ -36,12 +36,12 @@
                         </div>
                     <div class="card-header  text-center bg-dark text-white">Editar Imagen</div>
                     <div class="card-body">
-                        <form method="post" action="{{ url('myuser/img', ['id' => $usuario->id]) }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ url('myuser/img') }}" enctype="multipart/form-data">
                             @csrf
                             @if($usuario->image !== "")
                                 <div class="form-group row justify-content-center">
                                     <div class="col-md-3">
-                                        <img class="rounded mx-auto d-block img-thumbnail" src="../storage/app/imagenesUsuario/{{$usuario->image}}">
+                                        <img class="rounded mx-auto d-block img-thumbnail" src="{{ url('../'.Storage::url("app/imagenesUsuario/{$usuario->image}")) }}">
                                     </div>
                                 </div>
                             @endif
@@ -59,28 +59,31 @@
                     </div>
                 <div class="card-header  text-center bg-dark text-white">Editar Contraseña</div>
                 <div class="card-body">
-                    <form method="post" action="{{ url('myuser/pass', ['id' => $usuario->id]) }}">
+                    <form method="post" action="{{ url('myuser/pass') }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="passwordv" class="col-md-4 col-form-label text-md-right">Contraseña Antigua</label>
 
                             <div class="col-md-6">
-                                <input id="passwordv" type="password" class="form-control @error('passwordv') is-invalid @enderror" name="passwordv" required autocomplete="user" autofocus>
+                                <input id="passwordv" type="password" class="form-control @if($notice ?? '') is-invalid @endif" name="passwordv" required autocomplete="user" autofocus>
+                                @if($notice ?? '')
+                                    {{ $notice }}
+                                @endif
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="passwordn" class="col-md-4 col-form-label text-md-right">Contraseña Nueva</label>
 
                             <div class="col-md-6">
-                                <input id="passwordn" type="password" class="form-control @error('passwordn') is-invalid @enderror" name="passwordn" required autocomplete="user" autofocus>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="user" autofocus>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="passwordnn" class="col-md-4 col-form-label text-md-right">Repite Contraseña</label>
+                            <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">Repite Contraseña</label>
 
                             <div class="col-md-6">
-                                <input id="passwordnn" type="password" class="form-control @error('passwordnn') is-invalid @enderror" name="passwordnn" required autocomplete="user" autofocus>
+                                <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="user" autofocus>
                             </div>
                         </div>
                         <div class="form-group row text-center justify-content-center">

@@ -11,6 +11,8 @@
     <div class="row justify-content-center ml-1 mr-1">
         <div class="col-12 text-center">
             <h1>Comentarios</h1>
+        </div>
+        <div class="col-12">
             @foreach( $messages as $message )
                 <div class="row mb-3 mt-3 bg-white">
                     <div class="gris col-12 col-sm-5 col-lg-3 border border-rounded">
@@ -30,6 +32,11 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-7 col-lg-9">{!! $message->message !!}</div>
+                    @if(\Illuminate\Support\Facades\Auth::user() != null && $message->user->id === \Illuminate\Support\Facades\Auth::user()->id)
+                        <div class="col-12 text-right">
+                            <form action="{{ url('coment/del', ['mensaje' => $message->id]) }}" method="post"> @csrf <button class="btn btn-warning mt-1">Borrar</button></form>
+                        </div>
+                    @endif
                 </div>
             @endforeach
         </div>
