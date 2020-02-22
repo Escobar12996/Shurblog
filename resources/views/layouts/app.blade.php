@@ -85,27 +85,34 @@
                     </li>
                     @if (Route::has('login'))
                         @auth
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{ url('/newpost')}}">Crear Post</a>
-                            </li>
+
+                            @if( \Illuminate\Support\Facades\Auth::user()->type === 'Editor' || \Illuminate\Support\Facades\Auth::user()->type === 'Administrador' )
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{ url('/newpost')}}">Crear Post</a>
+                                </li>
+                            @endif
+
+                            @if( \Illuminate\Support\Facades\Auth::user()->type === 'Administrador' )
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Administracion
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ url('/viewposts')}}">Posts</a>
+                                        <a class="dropdown-item" href="{{ url('/viewusers')}}">Usuarios</a>
+                                    </div>
+                                </li>
+                            @endif
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Mi Usuario
+                                    {{ \Illuminate\Support\Facades\Auth::user()->user }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('/myuser')}}">Mi perfil</a>
                                 </div>
                             </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Administracion
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('/viewposts')}}">Posts</a>
-                                    <a class="dropdown-item" href="{{ url('/viewusers')}}">Usuarios</a>
-                                </div>
-                            </li>
                         @endauth
                     @endif
 

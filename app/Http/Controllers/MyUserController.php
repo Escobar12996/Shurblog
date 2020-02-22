@@ -62,12 +62,18 @@ class MyUserController extends Controller
         return redirect('myuser');
     }
 
-    public function updatePassword(ValidationFormUserPass $request) {
-
-
-        return view('user.getviewusers')->with('usuarios', $usuarios);
+    public function getviewusers() {
+        $usuarios = User::orderBy('id', 'asc')->paginate(10);
+        return view('user.editusers')->with('usuarios', $usuarios);
     }
 
+    public function chtype(Request $request, $id) {
+        $usuario = User::find($id);
+        $usuario->type = $request->type;
+        $usuario->save();
+
+        return redirect('viewusers');
+    }
 
 
 }

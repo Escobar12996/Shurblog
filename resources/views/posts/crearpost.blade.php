@@ -11,14 +11,14 @@
                     <label for="user" class="col-12 col-form-label text-md-center">Titulo</label>
 
                     <div class="col-12">
-                        <input id="user" type="text" class="form-control @error('user') is-invalid @enderror" name="tittle" required autocomplete="user" autofocus>
+                        <input id="user" type="text" class="form-control @error('tittle') is-invalid @enderror" name="tittle" required autocomplete="user" autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="email" class="col-12 col-form-label text-md-center">Noticia</label>
 
                     <div class="col-12">
-                        <textarea class="tiny" name="body" rows=25></textarea>
+                        <textarea class="tiny @error('tittle') is-invalid @enderror" name="body" rows=25></textarea>
                     </div>
                     <div class="col-12 text-center mt-3">
                         <button type="submit" class="btn btn-primary">Enviar</button>

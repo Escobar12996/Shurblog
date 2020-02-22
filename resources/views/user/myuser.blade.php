@@ -13,6 +13,11 @@
 
                                     <div class="col-md-6">
                                         <input id="user" type="text" class="form-control @error('user') is-invalid @enderror" name="user" value="{{ $usuario->user }}" required autocomplete="user" autofocus>
+                                        @error('user')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -20,6 +25,11 @@
 
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $usuario->email }}" required autocomplete="email" autofocus>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -27,6 +37,11 @@
 
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $usuario->name }}" required autocomplete="name" autofocus>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row text-center justify-content-center">
@@ -50,6 +65,11 @@
 
                                 <div class="col-md-6">
                                     <input id="image" accept="image/*" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ $usuario->image }}" required autocomplete="user" autofocus>
+                                    @error('image')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row text-center justify-content-center">
@@ -77,6 +97,11 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="user" autofocus>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
@@ -84,6 +109,11 @@
 
                             <div class="col-md-6">
                                 <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" required autocomplete="user" autofocus>
+                                    @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                             </div>
                         </div>
                         <div class="form-group row text-center justify-content-center">
