@@ -17,9 +17,9 @@ class CreatePostTable extends Migration
             $table->bigIncrements('id');
             $table->string('tittle');
             $table->longText('body');
-            $table->bigInteger('create')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
-            $table->foreign('create')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

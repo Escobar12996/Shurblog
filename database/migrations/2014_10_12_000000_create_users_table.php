@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->set("type", ['Basico', 'Editor', 'Administrador']);
             $table->string('image')->default();
-            $table->boolean('block')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

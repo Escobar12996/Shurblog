@@ -61,4 +61,13 @@ class MyUserController extends Controller
 
         return redirect('myuser');
     }
+
+    public function updatePassword(ValidationFormUserPass $request) {
+
+
+        return view('user.getviewusers')->with('usuarios', $usuarios);
+    }
+
+
+
 }
