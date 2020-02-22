@@ -87,9 +87,18 @@
                         @auth
 
                             @if( \Illuminate\Support\Facades\Auth::user()->type === 'Editor' || \Illuminate\Support\Facades\Auth::user()->type === 'Administrador' )
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{{ url('/newpost')}}">Crear Post</a>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Administrar Posts
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ url('/newpost')}}">Crear Post</a>
+                                        <a class="dropdown-item" href="{{ url('/viewmypost')}}">Ver Mis Posts</a>
+                                    </div>
                                 </li>
+
+
                             @endif
 
                             @if( \Illuminate\Support\Facades\Auth::user()->type === 'Administrador' )

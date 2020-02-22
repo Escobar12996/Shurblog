@@ -58,6 +58,11 @@ class PostController extends Controller
 
     public function viewPost($id){
         $post = Post::where('id', $id)->first();
+
+        if($post == null){
+            return view('errors.404');
+        }
+
         $message = Message::where('post', '=', $id)->get();
         return view('posts.verpost')->with('post', $post)->with('messages', $message);
     }
@@ -67,9 +72,14 @@ class PostController extends Controller
         return view('posts.visorposts')->with('posts', $posts);
     }
 
+    public function viewMyPost(){
+        $posts = Post::where('user_id', '=', Auth::User()->id)->paginate(10);
+        return view('posts.visorposts')->with('posts', $posts);
+    }
+
     public function deletepost($id){
         Post::where('id', $id)->get()->each->delete();;
-        return redirect('viewposts');
+        return redirect()->back();
     }
 
 
