@@ -43,6 +43,6 @@ Route::get('/viewmypost', 'PostController@viewMyPost')->middleware('auth')->midd
 
 
 //comentarios
-Route::post('/coment/{post}', 'ComentariosController@createComentario')->middleware('auth')->middleware('auth')->middleware('verified');
-Route::post('/coment/del/{id}', 'ComentariosController@deleteComentario')->middleware('auth')->middleware('auth')->middleware('verified');
+Route::post('/coment/{post}', 'MessagesController@createComentario')->middleware('auth')->middleware('auth')->middleware('verified');
+Route::post('/coment/del/{id}', 'MessagesController@deleteComentario')->middleware('auth')->middleware('auth')->middleware('verified');
 

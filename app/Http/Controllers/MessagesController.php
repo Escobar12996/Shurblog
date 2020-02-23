@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Request\ValidationFormMessages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ComentariosController extends Controller {
+class MessagesController extends Controller {
 
     /**
      * @param Request $request
@@ -15,7 +16,7 @@ class ComentariosController extends Controller {
      *
      * Crea el comentario para los posts
      */
-    public function createComentario(Request $request, $post){
+    public function createComentario(ValidationFormMessages $request, $post){
         $comentario = new Message();
         $comentario -> message = $request -> message;
         $comentario -> post = $post;

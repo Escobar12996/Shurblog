@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="pull-right" style="margin-top:10px;">
                 <div class="col-md-10 col-md-offset-1 pull-right">
-                    <img class="img-error" src="https://www.404pagefree.com/Template-demo/404_page_demo_042/images/fdfadfadsfadoh.png" />
+                    <img class="img-error" src="{{ url('../'.Storage::url("app/public/oh.png")) }}" />
                     <h2>404 Not Found</h2>
                     <p>Parece ser que la pagina no existe....</p>
                     <div class="error-actions">

@@ -7,7 +7,7 @@ namespace App\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ValidationFormUserImage extends FormRequest
+class ValidationFormMessages extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class ValidationFormUserImage extends FormRequest
     {
 
         return [
-            'image' => ['required', 'mimes:jpeg,gif,png'],
+            'message' => ['required', 'string', 'min:8'],
         ];
     }
 
@@ -38,8 +38,8 @@ class ValidationFormUserImage extends FormRequest
     public function messages()
     {
         return [
-            'image.required' => 'Debes introducir una imagen',
-            'image.mimes' => 'Debes introducir una imagen con un formato valido (png, jpg, gif)'
+            'message.required' => 'Debes introducir un mensaje',
+            'message.min' => 'El mensaje tiene que tener al menos 8 letras...',
         ];
     }
 }

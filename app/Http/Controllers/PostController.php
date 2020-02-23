@@ -78,7 +78,9 @@ class PostController extends Controller
     }
 
     public function deletepost($id){
-        Post::where('id', $id)->get()->each->delete();;
+
+        Message::where('post', $id)->get()->each->delete();
+        Post::where('id', $id)->get()->each->delete();
         return redirect()->back();
     }
 

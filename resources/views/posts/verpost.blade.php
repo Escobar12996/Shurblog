@@ -50,7 +50,13 @@
             <div class="form-group row">
                 <div class="col-12">
                     <textarea class="tiny" name="message" rows=10></textarea>
+                    @error('message')
+                    <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
+
                 <div class="col-12 text-center mt-3">
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>

@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <div class="pull-right" style="margin-top:10px;">
                 <div class="col-md-10 col-md-offset-1 pull-right">
-                    <img class="img-error" src="https://www.404pagefree.com/Template-demo/404_page_demo_042/images/fdfadfadsfadoh.png" />
+                    <img class="img-error" src="{{ url('../'.Storage::url("app/public/oh.png")) }}" />
                     <h2>403 No Autorizado</h2>
                     <div class="error-actions">
                         <a href="{{ url('/')}}" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-arrow-left"></span> Back Home </a>

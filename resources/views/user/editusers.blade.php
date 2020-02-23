@@ -7,6 +7,7 @@
         <tr>
             <th scope="col">Usuario</th>
             <th scope="col">Nombre Usuario</th>
+            <th scope="col">Correo</th>
             <th scope="col">Cambiar tipo usuario</th>
         </tr>
         </thead>
@@ -16,7 +17,9 @@
             <tr>
                 <th scope="row">{{$usuario->user}}</th>
                 <td>{{$usuario->name}}</td>
+                <td>{{$usuario->email}}</td>
                 <td>
+                    @if($usuario->id != 1)
                     <form action="{{ url('user/chtype', $usuario->id) }}" method="post">
                         @csrf
                         <select name="type">
@@ -26,6 +29,9 @@
                         </select>
                         <button type="submit">Actualizar</button>
                     </form>
+                        @else
+                    Administrador
+                    @endif
                 </td>
             </tr>
         @endforeach
