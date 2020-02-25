@@ -16,13 +16,13 @@
 <div class="container  bootstrap snippet">
     <div class="row">
         <div class="col-md-12">
-            <div class="pull-right" style="margin-top:10px;">
-                <div class="col-md-10 col-md-offset-1 pull-right">
+            <div class="row justify-content-center">
+                <div class="col-5 text-center">
                     <img class="img-error" src="{{ url('../'.Storage::url("app/public/oh.png")) }}" />
-                    <h2>403 No Autorizado</h2>
-                    <div class="error-actions">
-                        <a href="{{ url('/')}}" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-arrow-left"></span> Back Home </a>
-                    </div>
+                    <h2 class="m-2">403 No Autorizado</h2class>
+                        <div class="error-actions">
+                            <a href="{{ url('/')}}" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-arrow-left"></span>Dale aquí</a>
+                        </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'Visor de Posts')
 @section('content')
 
     <table class="table">
@@ -23,9 +23,9 @@
                     <tr>
                         <th scope="row">{{$post->tittle}}</th>
                         @if(\Illuminate\Support\Facades\Auth::user()->type === 'Administrador')
-                        <td><a class="btn btn-primary btn-lg" href="{{ url('deletepost', ['post' => $post->id]) }}">Eliminar</a></td>
+                        <td><a class="btn btn-danger btn-lg" href="{{ url('deletepost', ['post' => $post->id]) }}">Eliminar</a></td>
                         @else
-                        <td><a class="btn btn-primary btn-lg">No tienes Permisos</a></td>
+                        <td><a class="btn btn-secondary text-white btn-lg">No tienes Permisos</a></td>
                         @endif
                         <td><a class="btn btn-primary btn-lg" href="{{ url('editpost', ['post' => $post->id]) }}">Editar</a></td>
                     </tr>

@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
         $user->user = 'admin';
         $user->email = 'administrador@admin.com';
         $user->type = 'Administrador';
+        $user->image = '';
         $user->email_verified_at = '2020-02-22 00:00:00';
         $user->password = Hash::make('12345678');
         $user->save();

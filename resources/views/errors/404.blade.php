@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +16,13 @@
 <div class="container  bootstrap snippet">
     <div class="row">
         <div class="col-md-12">
-            <div class="pull-right" style="margin-top:10px;">
-                <div class="col-md-10 col-md-offset-1 pull-right">
+            <div class="row justify-content-center">
+                <div class="col-5 text-center">
                     <img class="img-error" src="{{ url('../'.Storage::url("app/public/oh.png")) }}" />
-                    <h2>404 Not Found</h2>
-                    <p>Parece ser que la pagina no existe....</p>
+                    <h2 class="m-2">404 Not Found</h2class>
+                    <h4 class="m-2 mb-4">Tah perdió??</h4>
                     <div class="error-actions">
-                        <a href="{{ url('/')}}" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-arrow-left"></span> Back Home </a>
+                        <a href="{{ url('/')}}" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-arrow-left"></span>Dale aquí</a>
                     </div>
                 </div>
             </div>

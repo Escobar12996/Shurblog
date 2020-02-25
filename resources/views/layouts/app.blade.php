@@ -133,7 +133,7 @@
                             <button type="submit" class="btn btn-outline-success text-white my-2 my-sm-0">Cerrar Sesion</button>
                         </form>
                     @else
-                        <a href="{{ url('login')}}" class="btn btn-outline-success text-white my-2 my-sm-0" type="submit">Login</a>
+                        <a href="{{ url('login')}}" class="btn btn-outline-success text-white my-2 my-sm-0" type="submit">Iniciar Sesion</a>
                     @endauth
                 @endif
 

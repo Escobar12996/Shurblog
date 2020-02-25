@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', $post->tittle)
 @section('content')
 
     <div class="jumbotron mb-5">
