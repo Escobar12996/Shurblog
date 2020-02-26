@@ -26,6 +26,8 @@ Route::post('/myuser/pass', 'MyUserController@updatePassword')->middleware('auth
 Route::get('/myuser/pass', 'MyUserController@getIndex')->middleware('auth')->middleware('verified');
 Route::get('/viewusers', 'MyUserController@getviewusers')->middleware('auth')->middleware('isAdmin')->middleware('verified');
 Route::post('/user/chtype/{id}', 'MyUserController@chtype')->middleware('auth')->middleware('isAdmin')->middleware('verified');
+Route::post('/user/delimage/{id}', 'MyUserController@delimage')->middleware('auth')->middleware('isAdmin')->middleware('verified');
+Route::post('/user/edituseradmin/{id}', 'MyUserController@edituseradmin')->middleware('auth')->middleware('isAdmin')->middleware('verified');
 
 
 //post

@@ -21,10 +21,11 @@
         @foreach($posts as $post)
             <div class="jumbotron">
                 <h1 class="display-4">{{$post->tittle}}</h1>
-                <hr class="my-4">
+                <hr class="my-4"/>
 
                 {{-- Limito a solo 450 palabras el posts --}}
                 {!! \Illuminate\Support\Str::limit($post->body, 450, $end = '...') !!}
+
                 <p class="lead">
                     {{-- Boton para leer mas --}}
                     <a class="btn btn-primary btn-lg" href="{{ url('viewpost', ['post' => $post->id]) }}" role="button">Leer Mas</a>

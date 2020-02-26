@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Request\ValidationFormUserData;
+use App\Request\ValidationFormUserEdit;
 use App\Request\ValidationFormUserImage;
 use App\Request\ValidationFormUserPass;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 
 class MyUserController extends Controller
 {
@@ -74,6 +74,25 @@ class MyUserController extends Controller
 
         return redirect('viewusers');
     }
+
+    public function delimage($id) {
+        $usuario = User::find($id);
+        if ($usuario->image !== ''){
+            unlink(storage_path('app\imagenesUsuario\\'.$usuario->image));
+        }
+
+        $usuario->image = "";
+        $usuario->save();
+        return redirect('viewusers');
+    }
+
+    public function edituseradmin(ValidationFormUserEdit $request, $id) {
+        $usuario = User::find($id);
+        $usuario->user = $request->user;
+        $usuario->save();
+        return redirect('viewusers');
+    }
+
 
 
 }

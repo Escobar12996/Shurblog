@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-7 col-lg-9">{!! $message->message !!}</div>
-                    @if(\Illuminate\Support\Facades\Auth::user() != null && $message->user->id === \Illuminate\Support\Facades\Auth::user()->id)
+                    @if(\Illuminate\Support\Facades\Auth::user() != null && ($message->user->id === \Illuminate\Support\Facades\Auth::user()->id || \Illuminate\Support\Facades\Auth::user()->type === 'Administrador'))
                         <div class="col-12 text-right">
                             <form action="{{ url('coment/del', ['mensaje' => $message->id]) }}" method="post"> @csrf <button class="btn btn-warning mt-1">Borrar</button></form>
                         </div>

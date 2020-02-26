@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('post/v1', 'PostApiController')->middleware('auth.basic');
+Route::resource('post', 'PostApiController')->middleware('auth.basic');
